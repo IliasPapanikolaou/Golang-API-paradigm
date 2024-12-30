@@ -46,7 +46,7 @@ func (s *PostgresStore) createAccountTable() error {
 		first_name TEXT NOT NULL,
 		last_name TEXT NOT NULL,
 		number BIGINT NOT NULL,
-		balance BIGINT NOT NULL,
+		balance DOUBLE PRECISION NOT NULL,
 		created_at TIMESTAMP
 	);`
 
@@ -54,7 +54,7 @@ func (s *PostgresStore) createAccountTable() error {
 	if err != nil {
 		log.Fatalf("Unable to create table: %v", err)
 	}
-	fmt.Println("Table 'account' ensured to exist!")
+	// fmt.Println("Table 'account' ensured to exist!")
 
 	return err
 }
